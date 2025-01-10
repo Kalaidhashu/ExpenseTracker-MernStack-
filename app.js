@@ -5,9 +5,18 @@ const app = express();
 //Middleware
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/expense").then(() => {
-    console.log("Connected to Database");
-});
+// mongoose.connect("mongodb://localhost:27017/expense").then(() => {
+//     console.log("Connected to Database");
+// });
+mongoose
+    .connect(
+        "mongodb+srv://kalaidharshinik2023cce:kalai123@cluster0.dkfxfj7.mongodb.net/"
+)
+    .then(() => {
+        console.log("Connected to Database");
+    });
+
+
 const expenseSchema = new mongoose.Schema({
     id: { type: String, required: true, unique: true },  //unique : true means it should be unique
     title: { type: String, required: true },     //required : true means it is mandatory field
