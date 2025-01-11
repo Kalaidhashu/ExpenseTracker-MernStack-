@@ -1,8 +1,10 @@
 var express = require("express")
 const mongoose = require("mongoose")
 const { v4: uuidv4 } = require("uuid")
+const cors = require("cors")
 const app = express();
 //Middleware
+app.use(cors())   // to avoid cors error  //cors means cross origin resource sharing
 app.use(express.json());
 
 // mongoose.connect("mongodb://localhost:27017/expense").then(() => {
